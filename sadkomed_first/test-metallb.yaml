@@ -1,3 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-test-deployment
+  labels:
+    app: my-k8s
+    env: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: new-test
+          image: karen52rus/k8s:v1.1
+          ports:
+            - containerPort: 80
+
+---
+
 apiVersion: v1
 kind: Service
 metadata:
