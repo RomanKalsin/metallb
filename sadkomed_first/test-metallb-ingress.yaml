@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-    name: test-webs
+    name: test-web
     namespace: default
 spec:
     selector:
@@ -47,7 +47,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: test.local
+  - host: rtest.sadkomed.ru
     http:
       paths:
       - path: /
