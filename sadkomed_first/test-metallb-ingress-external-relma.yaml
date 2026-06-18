@@ -35,6 +35,10 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - relma.sadkomed.ru
+    secretName: sadkomed-tls
   rules:
   - host: relma.sadkomed.ru
     http:
