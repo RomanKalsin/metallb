@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-    name: test-metallb
+    name: test-webs
     namespace: default
 spec:
     selector:
@@ -42,7 +42,7 @@ kind: Ingress
 metadata:
   name: test-web
   namespace: default
-  annotation:
+  annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
