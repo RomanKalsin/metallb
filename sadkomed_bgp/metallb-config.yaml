@@ -11,11 +11,20 @@ spec:
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: pool-253
+  name: pool-253-150
   namespace: metallb-system
 spec:
   addresses:
   - 192.168.253.150-192.168.253.155
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool-test-1
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.253.69/32
 ---
 apiVersion: metallb.io/v1beta1
 kind: BGPAdvertisement
@@ -24,4 +33,5 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-  - pool-253
+  - pool-253-150
+  - pool-test-1
