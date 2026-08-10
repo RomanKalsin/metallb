@@ -27,6 +27,15 @@ spec:
   - 192.168.253.69/32
 ---
 apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool-69-69
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.69.69/32
+---
+apiVersion: metallb.io/v1beta1
 kind: BGPAdvertisement
 metadata:
   name: bgp-253
@@ -35,3 +44,4 @@ spec:
   ipAddressPools:
   - pool-253-150
   - pool-test-1
+  - pool-69-69
